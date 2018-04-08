@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/root/.android/build-cache/d31341670770eb4d93dafb6990497e05cc142fe0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="746274223beb11b1cda7854d7eec3038695c2c93">
+        <dex dex="/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/pre-dexed/debug/classes_e89036ba9b78fd36d15962f78ab486cc82eaa7fd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/root/.android/build-cache/ec60793494e252647faaa4a8c9946c7c05dfaf4a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="dd431d6aa9ce9dc0d429fcd239d412a82ea0e9a7">
+        <dex dex="/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/pre-dexed/debug/classes_7da83fe8dd82c3728e79c22ed5cd1624559a1d89.jar" />
+    </item>
+
+</items>
