@@ -3,8 +3,8 @@ import {EventData, Observable} from "data/observable";
 class StartPageController extends Observable {
 
   public pageLoaded(args: EventData) {
-    var page = <Page>args.object;
-    page.bindingContext = this;
+    //var page = <Page>args.object;
+    //page.bindingContext = this;
   }
 
 }

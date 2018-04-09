@@ -1,7 +1,5 @@
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/app.js
-/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/main-page.js
-/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/bundle-config.js
-/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/main-view-model.js
+/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/pages/main/main-page.js
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/bundle-entry-points.js
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/console/console.js
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/tns_modules/tns-core-modules/http/http.js
