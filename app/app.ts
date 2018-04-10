@@ -1,4 +1,4 @@
+import "./bundle-config";
 import application = require("application");
-//application.mainModule = "pages/main/main-page";
-//application.cssFile = "styles/app.css";
-application.start();
+
+application.start({moduleName: "pages/main/main-page"});
