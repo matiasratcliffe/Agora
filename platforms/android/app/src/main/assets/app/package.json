@@ -2,7 +2,7 @@
   "android": {
     "v8Flags": "--expose_gc"
   },
-  "main": "app.ts",
+  "main": "app.js",
   "name": "agora",
   "version": "3.4.0"
 }
