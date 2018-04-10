@@ -1,0 +1,6 @@
+<Page loaded="pageLoaded">
+    <StackLayout>
+		<Button text="jaja" tap="tappit" />
+		<!-- HERE BE CONTENT -->
+    </StackLayout>
+</Page>

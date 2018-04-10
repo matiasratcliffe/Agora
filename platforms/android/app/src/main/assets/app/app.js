@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./bundle-config");
+var application = require("application");
+application.start({ moduleName: "pages/main/main-page" });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYXBwLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsMkJBQXlCO0FBQ3pCLHlDQUE0QztBQUU1QyxXQUFXLENBQUMsS0FBSyxDQUFDLEVBQUMsVUFBVSxFQUFFLHNCQUFzQixFQUFDLENBQUMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBcIi4vYnVuZGxlLWNvbmZpZ1wiO1xuaW1wb3J0IGFwcGxpY2F0aW9uID0gcmVxdWlyZShcImFwcGxpY2F0aW9uXCIpO1xuXG5hcHBsaWNhdGlvbi5zdGFydCh7bW9kdWxlTmFtZTogXCJwYWdlcy9tYWluL21haW4tcGFnZVwifSk7XG4iXX0=
