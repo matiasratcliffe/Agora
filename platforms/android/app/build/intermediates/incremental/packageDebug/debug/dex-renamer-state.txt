@@ -1,0 +1,4 @@
+#Sun Apr 22 20:12:42 ART 2018
+base.0=/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
