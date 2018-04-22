@@ -1,5 +1,0 @@
-function PopUp() {
-    var dialogs = require("ui/dialogs");
-    dialogs.alert("msg").then(function () { });
-}
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibXlmdW5jcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm15ZnVuY3MudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFFQyxJQUFJLE9BQU8sR0FBRyxPQUFPLENBQUMsWUFBWSxDQUFDLENBQUM7SUFDcEMsT0FBTyxDQUFDLEtBQUssQ0FBQyxLQUFLLENBQUMsQ0FBQyxJQUFJLENBQUMsY0FBWSxDQUFDLENBQUMsQ0FBQztBQUMxQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZnVuY3Rpb24gUG9wVXAoKSB7XG5cblx0dmFyIGRpYWxvZ3MgPSByZXF1aXJlKFwidWkvZGlhbG9nc1wiKTtcblx0ZGlhbG9ncy5hbGVydChcIm1zZ1wiKS50aGVuKGZ1bmN0aW9uICgpe30pO1xufVxuIl19

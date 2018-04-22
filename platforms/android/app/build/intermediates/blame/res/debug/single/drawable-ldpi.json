@@ -1,5 +1,13 @@
 [
     {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldpi/background.png",
+        "source": "/home/j3ster/Desktop/Template/platforms/android/app/src/main/res/drawable-ldpi/background.png"
+    },
+    {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldpi/icon.png",
+        "source": "/home/j3ster/Desktop/Template/platforms/android/app/src/main/res/drawable-ldpi/icon.png"
+    },
+    {
         "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldpi/logo.png",
         "source": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/res/drawable-ldpi/logo.png"
     },
@@ -10,5 +18,9 @@
     {
         "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldpi/background.png",
         "source": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/res/drawable-ldpi/background.png"
+    },
+    {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldpi/logo.png",
+        "source": "/home/j3ster/Desktop/Template/platforms/android/app/src/main/res/drawable-ldpi/logo.png"
     }
 ]
