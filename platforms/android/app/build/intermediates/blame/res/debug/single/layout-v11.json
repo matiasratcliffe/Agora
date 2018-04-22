@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_media_action.xml"
+    },
+    {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/layout-v11/notification_media_action.xml"
+    }
+]
