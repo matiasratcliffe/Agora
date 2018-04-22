@@ -1,26 +1,14 @@
 [
     {
         "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17/abc_spinner_mtrl_am_alpha.9.png",
-        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/drawable-ldrtl-hdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+        "source": "/home/j3ster/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
-        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
-        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+        "source": "/home/j3ster/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17/abc_spinner_mtrl_am_alpha.9.png",
-        "source": "/root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/drawable-ldrtl-hdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+        "source": "/home/j3ster/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/res/drawable-ldrtl-hdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
     }
 ]
