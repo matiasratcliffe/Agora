@@ -6,5 +6,13 @@
     {
         "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
         "source": "/home/j3ster/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/home/ignacio/Desktop/Programming/Agora/platforms/android/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/home/ignacio/.android/build-cache/3d38f36a4d8a928aad0b16445f0528c005f2a9b7/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/home/ignacio/Desktop/Programming/Agora/platforms/android/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/home/ignacio/.android/build-cache/3d38f36a4d8a928aad0b16445f0528c005f2a9b7/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     }
 ]
