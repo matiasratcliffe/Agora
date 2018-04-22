@@ -1,6 +1,10 @@
 [
     {
         "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
-        "source": "/home/j3ster/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+        "source": "/root/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/root/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     }
 ]

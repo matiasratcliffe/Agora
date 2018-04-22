@@ -2,7 +2,7 @@
 manifest
 ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:2:1-43:12
 	package
-		ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:3:2-34
+		ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:3:2-37
 		INJECTED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -27,22 +27,22 @@ ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main
 		ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:11:3-31
 uses-sdk
 ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:13:2-15:34
-MERGED from [:nativescript-optimized:] /home/j3ster/.android/build-cache/d31341670770eb4d93dafb6990497e05cc142fe0/output/AndroidManifest.xml:7:5-9:41
-MERGED from [:widgets-release:] /home/j3ster/.android/build-cache/ec60793494e252647faaa4a8c9946c7c05dfaf4a/output/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:design:25.3.1] /home/j3ster/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/j3ster/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/j3ster/.android/build-cache/efd59a655e1393f35271bdcdfe732f06bb327575/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/j3ster/.android/build-cache/cfe3fbd5e62467f2d2933b42d3bbf819ecd63795/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/j3ster/.android/build-cache/6aa48bc8cf8cd61dd42896155c828af1121f8e7d/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.3.1] /home/j3ster/.android/build-cache/220e36e1421db3ae774000ba2ff5798f672bc85c/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:25.3.1] /home/j3ster/.android/build-cache/350d77a62cb04abf43a77539a85f26fb1e5f5b7e/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.1] /home/j3ster/.android/build-cache/00071242ee03356a1a6cbc29ffc78e68cae59d0f/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/j3ster/.android/build-cache/6d0d03baed934bab7dccdee23d19c6d5a9607e30/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/j3ster/.android/build-cache/33f33137217cf9c6a4f3a3a3c5d1ad85e2e1761d/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/j3ster/.android/build-cache/0b3003f2243e611f1e7641f53d6ba94cf718eded/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.3.1] /home/j3ster/.android/build-cache/af84663121579cada8019cd2f18a7cd82ca032ca/output/AndroidManifest.xml:21:5-23:58
+MERGED from [:nativescript-optimized:] /root/.android/build-cache/2246f0bff6743c845388addc45b15b0b2f53cd42/output/AndroidManifest.xml:7:5-9:41
+MERGED from [:widgets-release:] /root/.android/build-cache/477260252deac1d2c71dc338781d750642d2b591/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.3.1] /root/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.1] /root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /root/.android/build-cache/efd59a655e1393f35271bdcdfe732f06bb327575/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /root/.android/build-cache/cfe3fbd5e62467f2d2933b42d3bbf819ecd63795/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /root/.android/build-cache/6aa48bc8cf8cd61dd42896155c828af1121f8e7d/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] /root/.android/build-cache/220e36e1421db3ae774000ba2ff5798f672bc85c/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.3.1] /root/.android/build-cache/350d77a62cb04abf43a77539a85f26fb1e5f5b7e/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /root/.android/build-cache/00071242ee03356a1a6cbc29ffc78e68cae59d0f/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /root/.android/build-cache/6d0d03baed934bab7dccdee23d19c6d5a9607e30/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /root/.android/build-cache/33f33137217cf9c6a4f3a3a3c5d1ad85e2e1761d/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /root/.android/build-cache/0b3003f2243e611f1e7641f53d6ba94cf718eded/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] /root/.android/build-cache/af84663121579cada8019cd2f18a7cd82ca032ca/output/AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.1] /home/j3ster/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.3.1] /root/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:15:3-32
 		INJECTED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml
@@ -65,18 +65,18 @@ ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main
 		ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:19:19-61
 application
 ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:21:2-42:16
-MERGED from [:widgets-release:] /home/j3ster/.android/build-cache/ec60793494e252647faaa4a8c9946c7c05dfaf4a/output/AndroidManifest.xml:11:5-12:19
-MERGED from [com.android.support:design:25.3.1] /home/j3ster/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/j3ster/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/j3ster/.android/build-cache/efd59a655e1393f35271bdcdfe732f06bb327575/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/j3ster/.android/build-cache/cfe3fbd5e62467f2d2933b42d3bbf819ecd63795/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:25.3.1] /home/j3ster/.android/build-cache/220e36e1421db3ae774000ba2ff5798f672bc85c/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-v4:25.3.1] /home/j3ster/.android/build-cache/350d77a62cb04abf43a77539a85f26fb1e5f5b7e/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] /home/j3ster/.android/build-cache/00071242ee03356a1a6cbc29ffc78e68cae59d0f/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/j3ster/.android/build-cache/6d0d03baed934bab7dccdee23d19c6d5a9607e30/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/j3ster/.android/build-cache/33f33137217cf9c6a4f3a3a3c5d1ad85e2e1761d/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/j3ster/.android/build-cache/0b3003f2243e611f1e7641f53d6ba94cf718eded/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] /home/j3ster/.android/build-cache/af84663121579cada8019cd2f18a7cd82ca032ca/output/AndroidManifest.xml:29:5-20
+MERGED from [:widgets-release:] /root/.android/build-cache/477260252deac1d2c71dc338781d750642d2b591/output/AndroidManifest.xml:11:5-12:19
+MERGED from [com.android.support:design:25.3.1] /root/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] /root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /root/.android/build-cache/efd59a655e1393f35271bdcdfe732f06bb327575/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /root/.android/build-cache/cfe3fbd5e62467f2d2933b42d3bbf819ecd63795/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.1] /root/.android/build-cache/220e36e1421db3ae774000ba2ff5798f672bc85c/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.1] /root/.android/build-cache/350d77a62cb04abf43a77539a85f26fb1e5f5b7e/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /root/.android/build-cache/00071242ee03356a1a6cbc29ffc78e68cae59d0f/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /root/.android/build-cache/6d0d03baed934bab7dccdee23d19c6d5a9607e30/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /root/.android/build-cache/33f33137217cf9c6a4f3a3a3c5d1ad85e2e1761d/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /root/.android/build-cache/0b3003f2243e611f1e7641f53d6ba94cf718eded/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /root/.android/build-cache/af84663121579cada8019cd2f18a7cd82ca032ca/output/AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:25:3-35
 	android:allowBackup
@@ -118,19 +118,19 @@ ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main
 	android:name
 		ADDED from /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/AndroidManifest.xml:41:13-55
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.1] /home/j3ster/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] /home/j3ster/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /home/j3ster/.android/build-cache/efd59a655e1393f35271bdcdfe732f06bb327575/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /home/j3ster/.android/build-cache/cfe3fbd5e62467f2d2933b42d3bbf819ecd63795/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] /home/j3ster/.android/build-cache/6aa48bc8cf8cd61dd42896155c828af1121f8e7d/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:transition:25.3.1] /home/j3ster/.android/build-cache/220e36e1421db3ae774000ba2ff5798f672bc85c/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-v4:25.3.1] /home/j3ster/.android/build-cache/350d77a62cb04abf43a77539a85f26fb1e5f5b7e/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] /home/j3ster/.android/build-cache/00071242ee03356a1a6cbc29ffc78e68cae59d0f/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] /home/j3ster/.android/build-cache/6d0d03baed934bab7dccdee23d19c6d5a9607e30/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] /home/j3ster/.android/build-cache/33f33137217cf9c6a4f3a3a3c5d1ad85e2e1761d/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] /home/j3ster/.android/build-cache/0b3003f2243e611f1e7641f53d6ba94cf718eded/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] /home/j3ster/.android/build-cache/af84663121579cada8019cd2f18a7cd82ca032ca/output/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.1] /root/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] /root/.android/build-cache/4b5757c4e2097272231765e48b629162859be574/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /root/.android/build-cache/efd59a655e1393f35271bdcdfe732f06bb327575/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /root/.android/build-cache/cfe3fbd5e62467f2d2933b42d3bbf819ecd63795/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /root/.android/build-cache/6aa48bc8cf8cd61dd42896155c828af1121f8e7d/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] /root/.android/build-cache/220e36e1421db3ae774000ba2ff5798f672bc85c/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] /root/.android/build-cache/350d77a62cb04abf43a77539a85f26fb1e5f5b7e/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /root/.android/build-cache/00071242ee03356a1a6cbc29ffc78e68cae59d0f/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /root/.android/build-cache/6d0d03baed934bab7dccdee23d19c6d5a9607e30/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /root/.android/build-cache/33f33137217cf9c6a4f3a3a3c5d1ad85e2e1761d/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /root/.android/build-cache/0b3003f2243e611f1e7641f53d6ba94cf718eded/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /root/.android/build-cache/af84663121579cada8019cd2f18a7cd82ca032ca/output/AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:design:25.3.1] /home/j3ster/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.1] /root/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.1] /home/j3ster/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.1] /root/.android/build-cache/00f75970587849b0a517990aa8d1b14e64618ea0/output/AndroidManifest.xml:26:9-47
