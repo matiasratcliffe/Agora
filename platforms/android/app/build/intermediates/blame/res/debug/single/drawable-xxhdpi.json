@@ -1,19 +1,7 @@
 [
     {
-        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi/logo.png",
-        "source": "/home/j3ster/Desktop/Template/platforms/android/app/src/main/res/drawable-xxhdpi/logo.png"
-    },
-    {
         "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi/icon.png",
         "source": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/res/drawable-xxhdpi/icon.png"
-    },
-    {
-        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi/icon.png",
-        "source": "/home/j3ster/Desktop/Template/platforms/android/app/src/main/res/drawable-xxhdpi/icon.png"
-    },
-    {
-        "merged": "/home/j3ster/Desktop/Template/platforms/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi/background.png",
-        "source": "/home/j3ster/Desktop/Template/platforms/android/app/src/main/res/drawable-xxhdpi/background.png"
     },
     {
         "merged": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi/background.png",

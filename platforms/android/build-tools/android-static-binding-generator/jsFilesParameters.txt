@@ -2,6 +2,7 @@
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/main.js
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/app.component.js
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/app.routing.js
+/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/model/user.model.js
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/pages/login/login.component.js
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/pages/start/start.component.js
 /home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app/tns_modules/nativescript-intl/index.js
