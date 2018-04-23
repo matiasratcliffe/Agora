@@ -6,6 +6,7 @@ var animations_2 = require("@angular/platform-browser/animations");
 var nativescript_module_1 = require("../nativescript.module");
 var renderer_1 = require("../renderer");
 var animation_driver_1 = require("./animation-driver");
+var utils_1 = require("../common/utils");
 var InjectableAnimationEngine = /** @class */ (function (_super) {
     __extends(InjectableAnimationEngine, _super);
     function InjectableAnimationEngine(driver, normalizer) {
@@ -46,7 +47,10 @@ exports.NATIVESCRIPT_ANIMATIONS_PROVIDERS = [
     }
 ];
 var NativeScriptAnimationsModule = /** @class */ (function () {
-    function NativeScriptAnimationsModule() {
+    function NativeScriptAnimationsModule(parentModule) {
+        // Prevents NativeScriptAnimationsModule from getting imported multiple times
+        // Prevents NativeScriptAnimationsModule from getting imported multiple times
+        utils_1.throwIfAlreadyLoaded(parentModule, "NativeScriptAnimationsModule");
     }
     NativeScriptAnimationsModule.decorators = [
         { type: core_1.NgModule, args: [{
@@ -55,7 +59,9 @@ var NativeScriptAnimationsModule = /** @class */ (function () {
                 },] },
     ];
     /** @nocollapse */
-    NativeScriptAnimationsModule.ctorParameters = function () { return []; };
+    NativeScriptAnimationsModule.ctorParameters = function () { return [
+        { type: NativeScriptAnimationsModule, decorators: [{ type: core_1.Optional }, { type: core_1.SkipSelf },] },
+    ]; };
     return NativeScriptAnimationsModule;
 }());
 exports.NativeScriptAnimationsModule = NativeScriptAnimationsModule;

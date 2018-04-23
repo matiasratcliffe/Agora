@@ -25,8 +25,6 @@ var NativeScriptHttpClientModule = /** @class */ (function () {
                     ]
                 },] },
     ];
-    /** @nocollapse */
-    NativeScriptHttpClientModule.ctorParameters = function () { return []; };
     return NativeScriptHttpClientModule;
 }());
 exports.NativeScriptHttpClientModule = NativeScriptHttpClientModule;

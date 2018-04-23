@@ -1,6 +1,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var view_1 = require("tns-core-modules/ui/core/view");
 var layout_base_1 = require("tns-core-modules/ui/layouts/layout-base");
+var page_1 = require("tns-core-modules/ui/page");
 var InvisibleNode = /** @class */ (function (_super) {
     __extends(InvisibleNode, _super);
     function InvisibleNode() {
@@ -120,6 +121,22 @@ function getSingleViewRecursive(nodes, nestLevel) {
     return rootLayout;
 }
 exports.getSingleViewRecursive = getSingleViewRecursive;
+var ɵ1 = function (parent, child, next) {
+    // Page cannot be added to Frame with _addChildFromBuilder (trows "use defaultPage" error)
+    if (isInvisibleNode(child)) {
+        return;
+    }
+    else if (child instanceof page_1.Page) {
+        parent.navigate({ create: function () { return child; } });
+    }
+    else {
+        throw new Error("Only a Page can be a child of Frame");
+    }
+};
+exports.ɵ1 = ɵ1;
+var frameMeta = {
+    insertChild: ɵ1
+};
 // Register default NativeScript components
 // Note: ActionBar related components are registerd together with action-bar directives.
 registerElement("AbsoluteLayout", function () { return require("tns-core-modules/ui/layouts/absolute-layout").AbsoluteLayout; });
@@ -129,6 +146,7 @@ registerElement("Button", function () { return require("tns-core-modules/ui/butt
 registerElement("ContentView", function () { return require("tns-core-modules/ui/content-view").ContentView; });
 registerElement("DatePicker", function () { return require("tns-core-modules/ui/date-picker").DatePicker; });
 registerElement("DockLayout", function () { return require("tns-core-modules/ui/layouts/dock-layout").DockLayout; });
+registerElement("Frame", function () { return require("tns-core-modules/ui/frame").Frame; }, frameMeta);
 registerElement("GridLayout", function () { return require("tns-core-modules/ui/layouts/grid-layout").GridLayout; });
 registerElement("HtmlView", function () { return require("tns-core-modules/ui/html-view").HtmlView; });
 registerElement("Image", function () { return require("tns-core-modules/ui/image").Image; });
@@ -159,4 +177,5 @@ registerElement("WrapLayout", function () { return require("tns-core-modules/ui/
 registerElement("FormattedString", function () { return require("tns-core-modules/text/formatted-string").FormattedString; });
 registerElement("Span", function () { return require("tns-core-modules/text/span").Span; });
 registerElement("DetachedContainer", function () { return require("tns-core-modules/ui/proxy-view-container").ProxyViewContainer; }, { skipAddToDom: true });
+registerElement("page-router-outlet", function () { return require("tns-core-modules/ui/frame").Frame; });
 //# sourceMappingURL=element-registry.js.map

@@ -11,4 +11,5 @@ export declare function instantiateRendererFactory(renderer: NativeScriptRendere
 export declare function instantiateDefaultStyleNormalizer(): WebAnimationsStyleNormalizer;
 export declare const NATIVESCRIPT_ANIMATIONS_PROVIDERS: Provider[];
 export declare class NativeScriptAnimationsModule {
+    constructor(parentModule: NativeScriptAnimationsModule);
 }

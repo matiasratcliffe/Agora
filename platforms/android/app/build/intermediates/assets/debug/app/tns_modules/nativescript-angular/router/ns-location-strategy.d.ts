@@ -1,5 +1,6 @@
 import { LocationStrategy } from "@angular/common";
-import { Frame, NavigationTransition } from "tns-core-modules/ui/frame";
+import { NavigationTransition } from "tns-core-modules/ui/frame";
+import { FrameService } from "../platform-providers";
 export interface NavigationOptions {
     clearHistory?: boolean;
     animated?: boolean;
@@ -13,12 +14,12 @@ export interface LocationState {
     isPageNavigation: boolean;
 }
 export declare class NSLocationStrategy extends LocationStrategy {
-    private frame;
+    private frameService;
     private states;
     private popStateCallbacks;
     private _isPageNavigationBack;
     private _currentNavigationOptions;
-    constructor(frame: Frame);
+    constructor(frameService: FrameService);
     path(): string;
     prepareExternalUrl(internal: string): string;
     pushState(state: any, title: string, url: string, queryParams: string): void;

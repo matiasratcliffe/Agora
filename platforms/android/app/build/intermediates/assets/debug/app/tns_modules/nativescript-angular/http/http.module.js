@@ -34,8 +34,6 @@ var NativeScriptHttpModule = /** @class */ (function () {
                     ]
                 },] },
     ];
-    /** @nocollapse */
-    NativeScriptHttpModule.ctorParameters = function () { return []; };
     return NativeScriptHttpModule;
 }());
 exports.NativeScriptHttpModule = NativeScriptHttpModule;

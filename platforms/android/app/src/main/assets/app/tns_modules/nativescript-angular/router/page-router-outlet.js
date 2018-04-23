@@ -77,22 +77,22 @@ function routeToString(activatedRoute) {
     return activatedRoute.pathFromRoot.join("->");
 }
 var PageRouterOutlet = /** @class */ (function () {
-    function PageRouterOutlet(parentContexts, location, name, locationStrategy, componentFactoryResolver, resolver, frame, changeDetector, device, pageFactory, routeReuseStrategy) {
+    function PageRouterOutlet(parentContexts, location, name, locationStrategy, componentFactoryResolver, resolver, changeDetector, device, pageFactory, routeReuseStrategy, elRef) {
         this.parentContexts = parentContexts;
         this.location = location;
         this.locationStrategy = locationStrategy;
         this.componentFactoryResolver = componentFactoryResolver;
         this.resolver = resolver;
-        this.frame = frame;
         this.changeDetector = changeDetector;
         this.pageFactory = pageFactory;
         this.routeReuseStrategy = routeReuseStrategy;
         // tslint:disable-line:directive-class-suffix
         this.activated = null;
         this._activatedRoute = null;
-        this.isInitialPage = true;
         this.activateEvents = new core_1.EventEmitter();
         this.deactivateEvents = new core_1.EventEmitter();
+        this.frame = elRef.nativeElement;
+        trace_1.routerLog("PageRouterOutlet.constructor frame:" + this.frame);
         this.name = name || router_1.PRIMARY_OUTLET;
         parentContexts.onChildOutletCreated(this.name, this);
         this.viewUtil = new view_util_1.ViewUtil(device);
@@ -235,38 +235,25 @@ var PageRouterOutlet = /** @class */ (function () {
         this.activateEvents.emit(this.activated.instance);
     };
     PageRouterOutlet.prototype.activateOnGoForward = function (activatedRoute, loadedResolver) {
-        var pageRoute = new PageRoute(activatedRoute);
-        var providers = this.initProvidersMap(activatedRoute, pageRoute);
-        var childInjector = new ChildInjector(providers, this.location.injector);
+        trace_1.routerLog("PageRouterOutlet.activate() forward navigation - " +
+            "create detached loader in the loader container");
         var factory = this.getComponentFactory(activatedRoute, loadedResolver);
-        if (this.isInitialPage) {
-            trace_1.routerLog("PageRouterOutlet.activate() initial page - just load component");
-            this.isInitialPage = false;
-            this.activated = this.location.createComponent(factory, this.location.length, childInjector, []);
-            this.changeDetector.markForCheck();
-        }
-        else {
-            trace_1.routerLog("PageRouterOutlet.activate() forward navigation - " +
-                "create detached loader in the loader container");
-            var page = this.pageFactory({
-                isNavigation: true,
-                componentType: factory.componentType,
-            });
-            providers.set(page_1.Page, page);
-            var loaderRef = this.location.createComponent(this.detachedLoaderFactory, this.location.length, childInjector, []);
-            this.changeDetector.markForCheck();
-            this.activated = loaderRef.instance.loadWithFactory(factory);
-            this.loadComponentInPage(page, this.activated);
-            this.activated[exports.loaderRefSymbol] = loaderRef;
-        }
-    };
-    PageRouterOutlet.prototype.initProvidersMap = function (activatedRoute, pageRoute) {
+        var page = this.pageFactory({
+            isNavigation: true,
+            componentType: factory.componentType,
+        });
         var providers = new Map();
-        providers.set(PageRoute, pageRoute);
+        providers.set(page_1.Page, page);
+        providers.set(frame_1.Frame, this.frame);
+        providers.set(PageRoute, new PageRoute(activatedRoute));
         providers.set(router_1.ActivatedRoute, activatedRoute);
-        var childContexts = this.parentContexts.getOrCreateContext(this.name).children;
-        providers.set(router_1.ChildrenOutletContexts, childContexts);
-        return providers;
+        providers.set(router_1.ChildrenOutletContexts, this.parentContexts.getOrCreateContext(this.name).children);
+        var childInjector = new ChildInjector(providers, this.location.injector);
+        var loaderRef = this.location.createComponent(this.detachedLoaderFactory, this.location.length, childInjector, []);
+        this.changeDetector.markForCheck();
+        this.activated = loaderRef.instance.loadWithFactory(factory);
+        this.loadComponentInPage(page, this.activated);
+        this.activated[exports.loaderRefSymbol] = loaderRef;
     };
     PageRouterOutlet.prototype.loadComponentInPage = function (page, componentRef) {
         var _this = this;
@@ -322,11 +309,11 @@ var PageRouterOutlet = /** @class */ (function () {
         { type: ns_location_strategy_1.NSLocationStrategy, },
         { type: core_1.ComponentFactoryResolver, },
         { type: core_1.ComponentFactoryResolver, },
-        { type: frame_1.Frame, },
         { type: core_1.ChangeDetectorRef, },
         { type: undefined, decorators: [{ type: core_1.Inject, args: [platform_providers_1.DEVICE,] },] },
         { type: undefined, decorators: [{ type: core_1.Inject, args: [platform_providers_1.PAGE_FACTORY,] },] },
         { type: ns_route_reuse_strategy_1.NSRouteReuseStrategy, },
+        { type: core_1.ElementRef, },
     ]; };
     PageRouterOutlet.propDecorators = {
         "activateEvents": [{ type: core_1.Output, args: ["activate",] },],

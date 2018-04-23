@@ -19,7 +19,7 @@ var DetachedLoader = /** @class */ (function () {
     DetachedLoader.prototype.loadInLocation = function (componentType) {
         var factory = this.resolver.resolveComponentFactory(componentType);
         var componentRef = this.containerRef.createComponent(factory, this.containerRef.length, this.containerRef.parentInjector);
-        // Component is created, buit may not be checked if we are loading
+        // Component is created, built may not be checked if we are loading
         // inside component with OnPush CD strategy. Mark us for check to be sure CD will reach us.
         // We are inside a promise here so no need for setTimeout - CD should trigger
         // after the promise.

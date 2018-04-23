@@ -12,7 +12,7 @@ export declare class ModalDialogParams {
 }
 export declare class ModalDialogService {
     showModal(type: Type<any>, {viewContainerRef, moduleRef, context, fullscreen}: ModalDialogOptions): Promise<any>;
-    private static showDialog({containerRef, context, doneCallback, fullscreen, pageFactory, parentPage, resolver, type});
+    private static showDialog({containerRef, context, doneCallback, fullscreen, pageFactory, parentView, resolver, type});
 }
 export declare class ModalDialogHost {
     constructor();

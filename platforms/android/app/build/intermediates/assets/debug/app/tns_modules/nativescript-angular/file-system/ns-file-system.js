@@ -18,8 +18,6 @@ var NSFileSystem = /** @class */ (function () {
     NSFileSystem.decorators = [
         { type: core_1.Injectable },
     ];
-    /** @nocollapse */
-    NSFileSystem.ctorParameters = function () { return []; };
     return NSFileSystem;
 }());
 exports.NSFileSystem = NSFileSystem;

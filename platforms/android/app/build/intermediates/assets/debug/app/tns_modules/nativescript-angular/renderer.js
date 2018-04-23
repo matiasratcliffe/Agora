@@ -2,7 +2,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var view_1 = require("tns-core-modules/ui/core/view");
 var application_1 = require("tns-core-modules/application");
-var frame_1 = require("tns-core-modules/ui/frame");
 var profiling_1 = require("tns-core-modules/profiling");
 var platform_providers_1 = require("./platform-providers");
 var view_util_1 = require("./view-util");
@@ -24,7 +23,7 @@ var NativeScriptRendererFactory = /** @class */ (function () {
     }
     NativeScriptRendererFactory.prototype.setRootNgView = function (rootView) {
         if (!rootView) {
-            rootView = platform_providers_1.getRootPage() || frame_1.topmost().currentPage;
+            rootView = platform_providers_1.getRootPage();
         }
         rootView.nodeName = "NONE";
         this.rootNgView = rootView;

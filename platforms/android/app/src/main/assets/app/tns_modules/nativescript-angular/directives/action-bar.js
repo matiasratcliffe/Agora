@@ -83,6 +83,9 @@ var ActionBarComponent = /** @class */ (function () {
     function ActionBarComponent(element, page) {
         this.element = element;
         this.page = page;
+        if (!this.page) {
+            throw new Error("Inside ActionBarComponent but no Page found in DI.");
+        }
         if (lang_facade_1.isBlank(this.page.actionBarHidden)) {
             this.page.actionBarHidden = false;
         }
@@ -106,6 +109,9 @@ exports.ActionBarComponent = ActionBarComponent;
 var ActionBarScope = /** @class */ (function () {
     function ActionBarScope(page) {
         this.page = page;
+        if (!this.page) {
+            throw new Error("Inside ActionBarScope but no Page found in DI.");
+        }
     }
     ActionBarScope.prototype.onNavButtonInit = function (navBtn) {
         this.page.actionBar.navigationButton = navBtn.element.nativeElement;
