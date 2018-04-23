@@ -36,3 +36,6 @@ export declare const defaultPageFactoryProvider: {
     provide: InjectionToken<PageFactory>;
     useValue: PageFactory;
 };
+export declare class FrameService {
+    getFrame(): Frame;
+}

@@ -1,4 +1,4 @@
-rootProject.name = "Agora"
+rootProject.name = "Hola"
 include ':app' //,  ':runtime', ":runtime-binding-generator"
 
 //project(':runtime').projectDir = new File('path/to/runtime')

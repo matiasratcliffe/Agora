@@ -1,7 +1,6 @@
-import { ChangeDetectorRef, ComponentFactoryResolver, ComponentRef, Injector, OnDestroy, OnInit, EventEmitter, ViewContainerRef } from "@angular/core";
+import { ChangeDetectorRef, ComponentFactoryResolver, ComponentRef, Injector, OnDestroy, OnInit, EventEmitter, ViewContainerRef, ElementRef } from "@angular/core";
 import { ActivatedRoute, ActivatedRouteSnapshot, ChildrenOutletContexts } from "@angular/router";
 import { Device } from "tns-core-modules/platform";
-import { Frame } from "tns-core-modules/ui/frame";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { PageFactory } from "../platform-providers";
 import { NSLocationStrategy } from "./ns-location-strategy";
@@ -38,16 +37,15 @@ export declare class PageRouterOutlet implements OnDestroy, OnInit {
     private locationStrategy;
     private componentFactoryResolver;
     private resolver;
-    private frame;
     private changeDetector;
     private pageFactory;
     private routeReuseStrategy;
     private activated;
     private _activatedRoute;
-    private isInitialPage;
     private detachedLoaderFactory;
     private name;
     private viewUtil;
+    private frame;
     activateEvents: EventEmitter<any>;
     deactivateEvents: EventEmitter<any>;
     /** @deprecated from Angular since v4 */
@@ -57,7 +55,7 @@ export declare class PageRouterOutlet implements OnDestroy, OnInit {
     readonly isActivated: boolean;
     readonly component: Object;
     readonly activatedRoute: ActivatedRoute;
-    constructor(parentContexts: ChildrenOutletContexts, location: ViewContainerRef, name: string, locationStrategy: NSLocationStrategy, componentFactoryResolver: ComponentFactoryResolver, resolver: ComponentFactoryResolver, frame: Frame, changeDetector: ChangeDetectorRef, device: Device, pageFactory: PageFactory, routeReuseStrategy: NSRouteReuseStrategy);
+    constructor(parentContexts: ChildrenOutletContexts, location: ViewContainerRef, name: string, locationStrategy: NSLocationStrategy, componentFactoryResolver: ComponentFactoryResolver, resolver: ComponentFactoryResolver, changeDetector: ChangeDetectorRef, device: Device, pageFactory: PageFactory, routeReuseStrategy: NSRouteReuseStrategy, elRef: ElementRef);
     ngOnInit(): void;
     ngOnDestroy(): void;
     deactivate(): void;
@@ -75,7 +73,6 @@ export declare class PageRouterOutlet implements OnDestroy, OnInit {
      */
     activateWith(activatedRoute: ActivatedRoute, resolver: ComponentFactoryResolver | null): void;
     private activateOnGoForward(activatedRoute, loadedResolver);
-    private initProvidersMap(activatedRoute, pageRoute);
     private loadComponentInPage(page, componentRef);
     private markActivatedRoute(activatedRoute);
     private getComponentFactory(activatedRoute, loadedResolver);

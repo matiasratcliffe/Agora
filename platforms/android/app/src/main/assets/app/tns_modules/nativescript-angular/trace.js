@@ -6,6 +6,7 @@ exports.viewUtilCategory = "ns-view-util";
 exports.routerTraceCategory = "ns-router";
 exports.routeReuseStrategyTraceCategory = "ns-route-reuse-strategy";
 exports.listViewTraceCategory = "ns-list-view";
+exports.bootstrapCategory = "bootstrap";
 function animationsLog(message) {
     trace_1.write(message, exports.animationsTraceCategory);
 }
@@ -42,4 +43,12 @@ function listViewError(message) {
     trace_1.write(message, exports.listViewTraceCategory, trace_1.messageType.error);
 }
 exports.listViewError = listViewError;
+function bootstrapLog(message) {
+    trace_1.write(message, exports.bootstrapCategory);
+}
+exports.bootstrapLog = bootstrapLog;
+function bootstrapLogError(message) {
+    trace_1.write(message, exports.bootstrapCategory, trace_1.messageType.error);
+}
+exports.bootstrapLogError = bootstrapLogError;
 //# sourceMappingURL=trace.js.map

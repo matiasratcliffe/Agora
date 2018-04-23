@@ -2,17 +2,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var trace_1 = require("../trace");
-var frame_1 = require("tns-core-modules/ui/frame");
 var lang_facade_1 = require("../lang-facade");
+var platform_providers_1 = require("../platform-providers");
 var defaultNavOptions = {
     clearHistory: false,
     animated: true
 };
 var NSLocationStrategy = /** @class */ (function (_super) {
     __extends(NSLocationStrategy, _super);
-    function NSLocationStrategy(frame) {
+    function NSLocationStrategy(frameService) {
         var _this = _super.call(this) || this;
-        _this.frame = frame;
+        _this.frameService = frameService;
         _this.states = new Array();
         _this.popStateCallbacks = new Array();
         _this._isPageNavigationBack = false;
@@ -83,7 +83,8 @@ var NSLocationStrategy = /** @class */ (function (_super) {
                 // This was a page navigation - so navigate through frame.
                 trace_1.routerLog("NSLocationStrategy.back() while not navigating back but top" +
                     " state is page - will call frame.goBack()");
-                this.frame.goBack();
+                var frame = this.frameService.getFrame();
+                frame.goBack();
             }
             else {
                 // Nested navigation - just pop the state
@@ -177,7 +178,7 @@ var NSLocationStrategy = /** @class */ (function (_super) {
     ];
     /** @nocollapse */
     NSLocationStrategy.ctorParameters = function () { return [
-        { type: frame_1.Frame, },
+        { type: platform_providers_1.FrameService, },
     ]; };
     return NSLocationStrategy;
 }(common_1.LocationStrategy));

@@ -26,8 +26,6 @@ var NativeScriptFormsModule = /** @class */ (function () {
                     ]
                 },] },
     ];
-    /** @nocollapse */
-    NativeScriptFormsModule.ctorParameters = function () { return []; };
     return NativeScriptFormsModule;
 }());
 exports.NativeScriptFormsModule = NativeScriptFormsModule;

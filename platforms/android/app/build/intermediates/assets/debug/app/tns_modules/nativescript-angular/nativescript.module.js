@@ -10,12 +10,16 @@ var core_1 = require("@angular/core");
 var common_1 = require("./common");
 var renderer_1 = require("./renderer");
 var detached_loader_1 = require("./common/detached-loader");
+var utils_1 = require("./common/utils");
 function errorHandlerFactory() {
     return new core_1.ErrorHandler();
 }
 exports.errorHandlerFactory = errorHandlerFactory;
 var NativeScriptModule = /** @class */ (function () {
-    function NativeScriptModule() {
+    function NativeScriptModule(parentModule) {
+        // Prevents NativeScriptModule from getting imported multiple times
+        // Prevents NativeScriptModule from getting imported multiple times
+        utils_1.throwIfAlreadyLoaded(parentModule, "NativeScriptModule");
     }
     NativeScriptModule.decorators = [
         { type: core_1.NgModule, args: [{
@@ -44,7 +48,9 @@ var NativeScriptModule = /** @class */ (function () {
                 },] },
     ];
     /** @nocollapse */
-    NativeScriptModule.ctorParameters = function () { return []; };
+    NativeScriptModule.ctorParameters = function () { return [
+        { type: NativeScriptModule, decorators: [{ type: core_1.Optional }, { type: core_1.SkipSelf },] },
+    ]; };
     return NativeScriptModule;
 }());
 exports.NativeScriptModule = NativeScriptModule;

@@ -17,6 +17,7 @@ var NativeScriptCommonModule = /** @class */ (function () {
                         platform_providers_1.defaultDeviceProvider,
                         platform_providers_1.defaultFrameProvider,
                         platform_providers_1.defaultPageProvider,
+                        platform_providers_1.FrameService,
                     ],
                     imports: [
                         common_1.CommonModule,
@@ -28,8 +29,6 @@ var NativeScriptCommonModule = /** @class */ (function () {
                     schemas: [core_1.NO_ERRORS_SCHEMA]
                 },] },
     ];
-    /** @nocollapse */
-    NativeScriptCommonModule.ctorParameters = function () { return []; };
     return NativeScriptCommonModule;
 }());
 exports.NativeScriptCommonModule = NativeScriptCommonModule;

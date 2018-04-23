@@ -5,13 +5,6 @@ var compiler_1 = require("@angular/compiler");
 var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
 var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
-// Add a fake polyfill for the document object
-// Add a fake polyfill for the document object
-global.document = global.document || {};
-var doc = global.document;
-doc.body = Object.assign((doc.body || {}), {
-    isOverride: true,
-});
 // Work around a TS bug requiring an imports of
 // InjectionToken, ViewEncapsulation and MissingTranslationStrategy
 // without using them
@@ -36,10 +29,6 @@ exports.NS_COMPILER_PROVIDERS = [
             ]
         },
         multi: true
-    },
-    {
-        provide: platform_browser_1.DOCUMENT,
-        useValue: doc,
     },
 ];
 // Dynamic platform

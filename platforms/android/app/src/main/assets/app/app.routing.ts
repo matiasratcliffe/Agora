@@ -1,12 +1,18 @@
-import { StartComponent } from "./pages/start/start.component";
-import { LoginComponent } from "./pages/login/login.component";
+import { NgModule } from "@angular/core";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { Routes } from "@angular/router";
 
-export const routes = [
-    { path: "", component: StartComponent },
-		{ path: "login", component: LoginComponent }
+import { ItemsComponent } from "./item/items.component";
+import { ItemDetailComponent } from "./item/item-detail.component";
+
+const routes: Routes = [
+    { path: "", redirectTo: "/items", pathMatch: "full" },
+    { path: "items", component: ItemsComponent },
+    { path: "item/:id", component: ItemDetailComponent },
 ];
 
-export const navigatableComponents = [
-    StartComponent,
-		LoginComponent
-];
+@NgModule({
+    imports: [NativeScriptRouterModule.forRoot(routes)],
+    exports: [NativeScriptRouterModule]
+})
+export class AppRoutingModule { }
