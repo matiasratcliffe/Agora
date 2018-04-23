@@ -3,21 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="/root/.android/build-cache/477260252deac1d2c71dc338781d750642d2b591/output/jars/classes.jar"
+        jar="/home/ignacio/.android/build-cache/7841b2a4d03961234c667f9390114a10c4f3c122/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="26.0.2"
-        sha1="dd431d6aa9ce9dc0d429fcd239d412a82ea0e9a7">
-        <dex dex="/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/pre-dexed/debug/classes_a89a2c29883249fb0629c870a66eca44408b1752.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/root/.android/build-cache/2246f0bff6743c845388addc45b15b0b2f53cd42/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
+        revision="27.0.3"
         sha1="746274223beb11b1cda7854d7eec3038695c2c93">
-        <dex dex="/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/pre-dexed/debug/classes_aeaebe311cfc908da36b2fac3dc1eedf9b0fc1d5.jar" />
+        <dex dex="/home/ignacio/Desktop/Programming/Agora/platforms/android/app/build/intermediates/pre-dexed/debug/classes_92d450e1f218d835ede6a14608d0fc191e15870a.jar" />
     </item>
 
 </items>
