@@ -1,4 +1,0 @@
-#Mon Apr 23 07:42:40 ART 2018
-base.0=/home/j3ster/movile/nativescript/Hola/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
