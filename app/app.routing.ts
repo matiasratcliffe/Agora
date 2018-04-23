@@ -3,13 +3,13 @@ import { LoginComponent } from "./pages/login/login.component";
 import { HubComponent } from "./pages/hub/hub.component";
 
 export const routes = [
-    { path: "", component: StartComponent },
+		{ path: "", component: StartComponent },
 		{ path: "login", component: LoginComponent },
-    { path: "hub", component: HubComponent }
+		{ path: "hub", component: HubComponent }
 ];
 
 export const navigatableComponents = [
-    StartComponent,
+		StartComponent,
 		LoginComponent,
-    HubComponent
+		HubComponent
 ];
