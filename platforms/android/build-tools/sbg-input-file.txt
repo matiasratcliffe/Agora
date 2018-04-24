@@ -1,0 +1,1 @@
+/home/j3ster/movile/nativescript/Hola/platforms/android/app/src/main/assets/app
