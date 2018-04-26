@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/j3ster/movile/nativescript/Hola/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be-rBY/values-be-rBY.xml",
+            "outputFile": "/home/j3ster/movile/nativescript/Agora/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be-rBY/values-be-rBY.xml",
             "map": [
                 {
                     "source": "/home/j3ster/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/ebe148c621d5a41d0e26c638307980de/res/values-be-rBY/values-be-rBY.xml",

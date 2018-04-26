@@ -1,1 +1,1 @@
-/home/j3ster/movile/nativescript/Hola/platforms/android/app/src/main/assets/metadata
+/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/metadata

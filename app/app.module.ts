@@ -8,18 +8,18 @@ import { AppComponent } from "./app.component";
 import { routes, navigatableComponents } from "./app.routing";
 
 @NgModule({
-    imports: [
-        NativeScriptModule,
-				NativeScriptHttpModule,
-				NativeScriptFormsModule,
-				NativeScriptRouterModule,
-				NativeScriptRouterModule.forRoot(routes)
-    ],
-    declarations: [
-        AppComponent,
-				...navigatableComponents
-    ],
-		bootstrap: [AppComponent],
-    schemas: [NO_ERRORS_SCHEMA]
+	imports: [
+		NativeScriptModule,
+		NativeScriptHttpModule,
+		NativeScriptFormsModule,
+		NativeScriptRouterModule,
+		NativeScriptRouterModule.forRoot(routes)
+	],
+	declarations: [
+		AppComponent,
+		...navigatableComponents
+	],
+	bootstrap: [AppComponent],
+	schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
