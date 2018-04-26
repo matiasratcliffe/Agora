@@ -134,7 +134,7 @@ try:
 			f.write(ln)
 	print("Done!")
 
-	print("\nModyfing platforms/android/app/build.gradle...", end="")
+	print("Modyfing platforms/android/app/build.gradle...", end="")
 	with open("platforms/android/app/build.gradle", 'r') as f:
 		filedata = f.read()
 	if not (os.path.isfile("platforms/android/app/build.gradel.bk")):
