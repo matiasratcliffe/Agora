@@ -1,1 +1,0 @@
-/home/j3ster/movile/nativescript/Agora/platforms/android/app/src/main/assets/app
