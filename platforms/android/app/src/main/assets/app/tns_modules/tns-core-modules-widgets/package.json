@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "tns-core-modules-widgets@4.0.0",
+      "/home/j3ster/movile/nativescript/Agora"
+    ]
+  ],
   "_from": "tns-core-modules-widgets@4.0.0",
   "_id": "tns-core-modules-widgets@4.0.0",
   "_inBundle": false,
@@ -19,17 +25,14 @@
     "/tns-core-modules"
   ],
   "_resolved": "https://registry.npmjs.org/tns-core-modules-widgets/-/tns-core-modules-widgets-4.0.0.tgz",
-  "_shasum": "25b3eecc67a5df2554d25aa17cb12b0f244eea82",
-  "_spec": "tns-core-modules-widgets@4.0.0",
-  "_where": "/home/j3ster/movile/nativescript/Hola/node_modules/tns-core-modules",
+  "_spec": "4.0.0",
+  "_where": "/home/j3ster/movile/nativescript/Agora",
   "author": {
     "name": "NativeScript team"
   },
   "bugs": {
     "url": "https://github.com/NativeScript/android-widgets/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": false,
   "description": "Native widgets used in the NativeScript framework.",
   "homepage": "https://github.com/NativeScript/android-widgets#readme",
   "license": "Apache-2.0",

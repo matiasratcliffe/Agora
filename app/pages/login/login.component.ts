@@ -5,40 +5,38 @@ import { Page } from "tns-core-modules/ui/page";
 import { User } from "../../model/user.model";
 
 @Component({
-    selector: "app-login",
-		templateUrl: "pages/login/login.component.html",
-		styleUrls: ["pages/login/login.component.css"],
-		providers: [BaseService]
+	selector: "app-login",
+	templateUrl: "pages/login/login.component.html",
+	styleUrls: ["pages/login/login.component.css"],
+	providers: [BaseService]
 })
 export class LoginComponent implements OnInit {
 
-    user: User;
-		isLoggingIn = true;
+	user: User;
+	isLoggingIn = true;
 
-		constructor(private appService: BaseService, private page: Page) {
-			this.user = new User();
+	constructor(private appService: BaseService, private page: Page) {
+		this.user = new User();
+	}
+
+	ngOnInit() {
+		this.page.actionBarHidden = true;
+	}
+
+	submit() {
+		if (this.isLoggingIn) {
+			this.login();
+		} else {
+			this.signUp();
 		}
+	}
 
-    ngOnInit() {
-			this.page.actionBarHidden = true;
-    }
+	login() {}
 
-		submit() {
-			 if (this.isLoggingIn) {
-					 this.login();
-			 } else {
-					 this.signUp();
-			 }
-	 }
+	signUp() {}
 
-	 login() {
-	 }
+	toggleDisplay() {
+		this.isLoggingIn = !this.isLoggingIn;
+	}
 
-	 signUp() {
-
-	 }
-
-	 toggleDisplay() {
-			 this.isLoggingIn = !this.isLoggingIn;
-	 }
 }
