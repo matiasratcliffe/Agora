@@ -113,7 +113,7 @@ try:
 		if (full or not (os.path.isdir("node_modules") and os.path.isdir("platforms"))):
 			print("\nAttempting to install tns-dependencies:\n")
 		if (full or not os.path.isdir("platforms")):
-			print("------------------------------------------------------")		
+			print("------------------------------------------------------")
 			print("Adding android platform\n")
 			os.system("tns platform add android")
 			print("------------------------------------------------------")
@@ -163,4 +163,3 @@ try:
 
 except Exception as e:
 	print("Error!\n\n" + str(e) + "\n")
-
