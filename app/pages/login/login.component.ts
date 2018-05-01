@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	login() {
-		this.http.post(AppConfig.server,{}).subscribe(
+		this.http.post("ada",{}).subscribe(
 			() => {},
 			() => {}
 		);

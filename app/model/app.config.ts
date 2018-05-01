@@ -1,3 +1,3 @@
-export module AppConfig {
-    server: const string = "";
+export namespace AppConfig {
+    export const server: string = "";
 }
