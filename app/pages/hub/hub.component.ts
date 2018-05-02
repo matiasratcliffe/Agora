@@ -14,8 +14,11 @@ export class HubComponent implements OnInit {
 
 	user: User;
 
-	constructor(private appService: BaseService, private page: Page) {
-		this.user = new User();
+	constructor(private app: BaseService, private page: Page) {
+		if (app.isset("user"))
+			this.user = app.getData("user");
+		else
+			this.app.goto(""); //go to start, and do some checking there
 	}
 
 	ngOnInit() {
