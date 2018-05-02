@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { Page } from "tns-core-modules/ui/page";
 
-import { BaseService } from "../../services/base.service";
-import { HttpService } from "../../services/http.service";
+import { BaseService } from "~/services/base.service";
+import { HttpService } from "~/services/http.service";
 
-import { AppConfig } from "../../model/app.config";
-import { User } from "../../model/user.model";
+import { AppConfig } from "~/model/app.config";
+import { User } from "~/model/user.model";
 
 @Component({
 	selector: "app-login",
