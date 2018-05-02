@@ -23,7 +23,7 @@ if (len(sys.argv) == 2 and sys.argv[1] != current_folder and os.path.isdir("../"
 	print("\nError, there is another folder with that name in the parent directory!\n")
 	exit(1)
 
-print ("\nNativeScript MANA Angular-Template patcher")
+print ("\nNativeScript MACANA Angular-Template patcher")
 
 try:
 	print("\nChecking for necesary dependencies...", end="")
