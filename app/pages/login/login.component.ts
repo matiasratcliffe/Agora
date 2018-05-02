@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
 			(response) => { 
 				//alert(response.content); 
 				this.app.log("biennnnn");
+				this.app.setData("user", this.user);
 				this.app.goto("hub");
 			},
 			(error) => {
