@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
 	isLoggingIn = true;
 
 	constructor(private app: BaseService, private http: HttpService, private page: Page) {
+		this.http.setDefaultUrl(AppConfig.server);
 		this.user = new User();
 	}
 
@@ -35,13 +36,38 @@ export class LoginComponent implements OnInit {
 	}
 
 	login() {
-		this.http.post(AppConfig.server,{}).subscribe(
-			() => {},
-			() => {}
+		this.http.post({
+			"action": "login",
+			"user": this.user.email,
+			"pass": this.user.password
+		}).subscribe(
+			(response) => { 
+				//alert(response.content); 
+				this.app.log("biennnnn");
+				this.app.goto("hub");
+			},
+			(error) => {
+				alert(error.error.text);	
+			}
 		);
 	}
 
-	signUp() {}
+	signUp() {
+		this.http.post({
+			"action": "register",
+			"user": this.user.email,
+			"pass": this.user.password
+		}).subscribe(
+			(response) => { 
+				//alert(response.content); 
+				this.app.log("biennnnn");
+				this.app.goto("hub");
+			},
+			(error) => {
+				alert(error.error.text);	
+			}
+		);
+	}
 
 	toggleDisplay() {
 		this.isLoggingIn = !this.isLoggingIn;
