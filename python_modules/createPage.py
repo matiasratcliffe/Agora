@@ -6,10 +6,10 @@ import yaml
 def dic2str(dic, unquoted=""):
     ret = "{"
     for key in dic:
-        ret += " " + key + ": " + ("\"" if key!=unquoted else "") + dic[key] + ("\"" if key!=unquoted else "") + ","
+        ret += " " + key + ": " + ('"'*(key!=unquoted)) + dic[key] + ('"'*(key!=unquoted)) + ","
     return ret[:-1] + " }"
 
-def createPage(argv)
+def createPage(argv):
     # Validating input
     if (len(argv) != 2):
         print("\nInvalid number of arguments: Expected: 1, Recieved: " + str(len(argv)-1) + "\n")
@@ -35,12 +35,9 @@ def createPage(argv)
         print("\nPage subpaths must be pure characters and may end with a number\n")
         exit(1)
 
-    #print("\nNativeScript MACANA Page Creator")
-
     # Checking if it is a valid project folder
 
     try:
-        #print("\nChecking for necesary dependencies...", end="")
         if not (os.path.isdir("app")):
             raise NotADirectoryError("\nError! Couldn't find 'app' folder!\n")
         if not (os.path.isfile("app/app.routing.ts")):
@@ -49,7 +46,6 @@ def createPage(argv)
             raise NotADirectoryError("\nError! Couldn't find 'app/pages' folder!\n")
         if not (os.path.isfile("app/package.json")):
             raise NotADirectoryError("\nError!Couldn't find 'app/package.json' file!\n")
-        #print("Done!\n")
     except NotADirectoryError as e:
         print(e)
         exit(1)
@@ -113,11 +109,8 @@ def createPage(argv)
             raise BaseException("The numbers of folders and declared pages is not the same!")
 
         #check if components correspond with imports and routes
-        sort_comp = list(components)
-        sort_impo = list(map(lambda e : e[0], imports))
-        sort_comp.sort()
-        sort_impo.sort()
-        if (sort_comp != sort_impo):
+        sorted(list(map(lambda e : e[0], imports)))
+        if (sorted(components) !=sorted(list(map(lambda e : e[0], imports)))):
             raise BaseException("The imports and components do not match")
         for e in components:
             found = False
@@ -148,7 +141,7 @@ def createPage(argv)
         routes = list(filter(lambda e : "component" in e, routes))
         with open("app/app.routing.ts", 'w') as f:
             for e in imports:
-                f.write("import { " + e[0] + " } from \"./pages/" + ("" if e[1]==None else e[1]) + e[0].lower()[0:len(e[0])-len("component")] + "/" + e[0].lower()[0:len(e[0])-len("component")] + ".component\";\n")
+                f.write("import { " + e[0] + " } from \"./pages/" + (str(e[1])*(e[1]!=None)) + e[0].lower()[0:len(e[0])-len("component")] + "/" + e[0].lower()[0:len(e[0])-len("component")] + ".component\";\n")
             f.write("import { " + name.capitalize() + "Component } from \"./pages/" + subpath + name + "/" + name + ".component\";\n\n")
             f.write("export const routes = [\n")
             for d in indepRoutes:
