@@ -3,16 +3,19 @@ import os
 import sys
 import yaml
 
+def error(msg):
+    print('\x1b[6;31;28m' + str(msg) + '\x1b[0m')
+
 def dic2str(dic, unquoted=""):
     ret = "{"
     for key in dic:
         ret += " " + key + ": " + ('"'*(key!=unquoted)) + dic[key] + ('"'*(key!=unquoted)) + ","
     return ret[:-1] + " }"
 
-def createPage(argv):
+def createPage(argv, delete=False, dev=False):
     # Validating input
     if (len(argv) != 2):
-        print("\nInvalid number of arguments: Expected: 1, Recieved: " + str(len(argv)-1) + "\n")
+        error("\nInvalid number of arguments: Expected: 1, Recieved: " + str(len(argv)-1) + "\n")
         exit(1)
 
     argv[1] = str(argv[1]).lower()
@@ -23,16 +26,16 @@ def createPage(argv):
     if (len(subpath) > 0):
         subpath += "/" #le agrego una '/' al final para facilitarme la
 
-    if (len(name) < 3 or len(name) > 20):
-        print("\nPage name must be 3-20 characters long\n")
+    if (len(name) < 3 or len(name) > 14):
+        error("\nPage name must be 3-14 characters long\n")
         exit(1)
 
     if not (re.fullmatch("[a-z]+[0-9]*", name)):
-        print("\nPage name must be pure characters and may end with a number\n")
+        error("\nPage name must be pure characters and may end with a number\n")
         exit(1)
 
     if (len(subpath) > 0 and not re.match("([a-z]+[0-9]*/)+", subpath)):
-        print("\nPage subpaths must be pure characters and may end with a number\n")
+        error("\nPage subpaths must be pure characters and may end with a number\n")
         exit(1)
 
     # Checking if it is a valid project folder
@@ -50,14 +53,14 @@ def createPage(argv):
         print(e)
         exit(1)
     except:
-        print("Error!\nSomething happened while checking for local dependencies")
-        print("Make sure you have enough priviliges!\n")
+        error("Error!\nSomething happened while checking for local dependencies")
+        error("Make sure you have enough priviliges!\n")
         exit(1)
 
     # Checking if the page folder already exists
 
     if (os.path.isdir("app/pages/" + name)):
-        print("\nError! Page folder '" + name + "' already exists!\n")
+        error("\nError! Page folder '" + name + "' already exists!\n")
         exit(1)
     else:
         nPaginas = int(os.popen("ls -l app/pages/**/*.component.ts | wc -l").read())
@@ -73,7 +76,7 @@ def createPage(argv):
             raise BaseException("Found more or less than the expected 3 sectios")
         for i in range(0, len(buffer)):
             buffer[i] = buffer[i].strip() # strip = trim
-        
+
         #la primera seccion
         imports = []
         for line in buffer[0].split("\n"):
@@ -88,7 +91,7 @@ def createPage(argv):
                 if (elem[0] == result.group(1)):
                     raise BaseException("You seem to have a repeated page!")
                 if (elem[0].lower() == result.group(1).lower()):
-                    print("\nWarning! Your there are routes which when converted to lower case have the same name!\n")
+                    error("\nWarning! Your there are routes which when converted to lower case have the same name!\n")
             imports.append([result.group(1) + "Component", result.group(2)])
 
         #la segunda seccion
@@ -122,8 +125,8 @@ def createPage(argv):
                 raise BaseException("One or more components weren't found on the routes array")
 
     except BaseException as e:
-        print("\nYour current app's format doesn't seem to correspond with the MACANA Angular standard")
-        print("It's not safe to proceed: " + str(e) + "\n")
+        error("\nYour current app's format doesn't seem to correspond with the MCN Angular standard")
+        error("It's not safe to proceed: " + str(e) + "\n")
         exit(2)
 
     if (name in list(map(lambda e : e.lower()[0:len(e)-len("component")], components))):
@@ -131,35 +134,38 @@ def createPage(argv):
         exit(1)
 
     try:
-        with open("app/app.routing.ts", 'r') as f:
-            backup = f.read()
-        with open("app/app.routing.ts.bk", 'w') as f:
-            f.write(backup)
-        os.chmod("app/app.routing.ts.bk", 0o750)
+        if not dev:
+            with open("app/app.routing.ts", 'r') as f:
+                backup = f.read()
+            with open("app/app.routing.ts.bk", 'w') as f:
+                f.write(backup)
+            os.chmod("app/app.routing.ts.bk", 0o750)
 
         indepRoutes = list(filter(lambda e : "component" not in e, routes))
         routes = list(filter(lambda e : "component" in e, routes))
-        with open("app/app.routing.ts", 'w') as f:
-            for e in imports:
-                f.write("import { " + e[0] + " } from \"./pages/" + (str(e[1])*(e[1]!=None)) + e[0].lower()[0:len(e[0])-len("component")] + "/" + e[0].lower()[0:len(e[0])-len("component")] + ".component\";\n")
-            f.write("import { " + name.capitalize() + "Component } from \"./pages/" + subpath + name + "/" + name + ".component\";\n\n")
-            f.write("export const routes = [\n")
-            for d in indepRoutes:
-                f.write("\t" + dic2str(d) + ",\n")
-            for d in routes:
-                f.write("\t" + dic2str(d, "component") + ",\n")            
-            f.write("\t{ path: \"" + name + "\", component: " + name.capitalize() + "Component }\n" )
-            f.write("];\n\n")
-            f.write("export const navigatableComponents = [\n")
-            for e in components:
-                f.write("\t" + e + ",\n")
-            f.write("\t" + name.capitalize() + "Component\n")
-            f.write("];\n")
-        os.chmod("app/app.routing.ts", 0o750)
-        os.makedirs("app/pages/" + subpath + name)
+        if not dev:
+            with open("app/app.routing.ts", 'w') as f:
+                for e in imports:
+                    f.write("import { " + e[0] + " } from \"./pages/" + (str(e[1])*(e[1]!=None)) + e[0].lower()[0:len(e[0])-len("component")] + "/" + e[0].lower()[0:len(e[0])-len("component")] + ".component\";\n")
+                f.write("import { " + name.capitalize() + "Component } from \"./pages/" + subpath + name + "/" + name + ".component\";\n\n")
+                f.write("export const routes = [\n")
+                for d in indepRoutes:
+                    f.write("\t" + dic2str(d) + ",\n")
+                for d in routes:
+                    f.write("\t" + dic2str(d, "component") + ",\n")            
+                f.write("\t{ path: \"" + name + "\", component: " + name.capitalize() + "Component }\n" )
+                f.write("];\n\n")
+                f.write("export const navigatableComponents = [\n")
+                for e in components:
+                    f.write("\t" + e + ",\n")
+                f.write("\t" + name.capitalize() + "Component\n")
+                f.write("];\n")
+            os.chmod("app/app.routing.ts", 0o750)
+            os.makedirs("app/pages/" + subpath + name)
 
-        with open("app/pages/" + subpath + name + "/" + name + ".component.ts", 'w') as f:
-            f.write('''import { Component, OnInit} from "@angular/core";
+        if not dev:
+            with open("app/pages/" + subpath + name + "/" + name + ".component.ts", 'w') as f:
+                f.write('''import { Component, OnInit} from "@angular/core";
 import { BaseService } from "~/services/base.service";
 import { Page } from "tns-core-modules/ui/page";
 
@@ -174,21 +180,20 @@ export class """ + name.capitalize() + """Component implements OnInit {
 	}
 }
 """)
-        with open("app/pages/" + subpath + name + "/" + name + ".component.html", 'w') as f:
-            pass
-        with open("app/pages/" + subpath + name + "/" + name + ".component.css", 'w') as f:
-            pass
-
-        os.remove("app/app.routing.ts.bk")
+            with open("app/pages/" + subpath + name + "/" + name + ".component.html", 'w') as f:
+                f.write("")
+            with open("app/pages/" + subpath + name + "/" + name + ".component.css", 'w') as f:
+                f.write("")
+            os.remove("app/app.routing.ts.bk")
     except BaseException as e: #restore backup if posible and ask for priviliges
-        with open("app/app.routing.ts.bk", 'r') as f:
-            backup = f.read()
-        with open("app/app.routing.ts", 'w') as f:
-            f.write(backup)
-        os.chmod("app/app.routing.ts", 0o750)
-        os.remove("app/app.routing.ts.bk")
+        if not dev:
+            with open("app/app.routing.ts.bk", 'r') as f:
+                backup = f.read()
+            with open("app/app.routing.ts", 'w') as f:
+                f.write(backup)
+            os.chmod("app/app.routing.ts", 0o750)
+            os.remove("app/app.routing.ts.bk")
         print(e)
         exit(0)
-
 
 #TODO para ke sirve el boton limite de velocidad del bondi
