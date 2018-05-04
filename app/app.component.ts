@@ -1,17 +1,16 @@
 import { Component, OnInit } from "@angular/core";
-import { BaseService } from "~/services/base.service";
+//import { Router } from "@angular/router";
 import { Page } from "tns-core-modules/ui/page";
 
 @Component({
 	selector: "ns-app",
-	providers: [BaseService]
+	template: "<Label text='HERE BE LOGO'></Label>",
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-	constructor(private app: BaseService, private page: Page) { }
+	constructor(private page: Page) { }
 
 	ngOnInit() {
-		this.page.actionBarHidden = true;
-		this.app.goto("login");
+		//this.router.navigate(["login"]);
 	}
 }
