@@ -1,5 +1,4 @@
 import os
-import sys
 
 class DuplicateWarning(Exception):
 	def __init__(self, message):
@@ -9,13 +8,14 @@ class InvalidParameter(Exception):
 	def __init__(self, message):
 		super(InvalidParameter, self).__init__(str(message))
 
-def parseArgv(specArgs=[], valid1chars=[], validoptions=[], permissive=True):
+def parseArgv(param, specArgs=[], valid1chars=[], validoptions=[], unhiffened_args=0, getpath=False, permissive=True):
 	pathstack = []
 	optarr1   = []
 	optarr2   = []
 	specParam = {}
-	param     = sys.argv[1:]
 
+	dupflag = 0
+	
 	# Initial Filter
 	for e in param:
 		if (type(e) != type("string")):
@@ -59,13 +59,13 @@ def parseArgv(specArgs=[], valid1chars=[], validoptions=[], permissive=True):
 				aux.append(e)
 			i += 1
 		param = aux
-
+		
 	for e in param:
 		if (e[0] != '-'):
-			if (os.path.isdir(e)):
+			if ((os.path.isdir(e) and getpath) or (len(pathstack) < unhiffened_args)):
 				pathstack.append(os.path.abspath(e))
 			else:
-				raise SyntaxError("Invalid Path/Argument: \"" + e + "\"")
+				raise SyntaxError("Invalid " + ("Path/"*getpath) + "Argument: \"" + e + "\"")
 		elif (len(e) > 1 and e[1] != '-'):
 			optarr1 += e[1:]
 		elif (len(e) > 2 and e[2] != '-'):
@@ -74,10 +74,10 @@ def parseArgv(specArgs=[], valid1chars=[], validoptions=[], permissive=True):
 			raise SyntaxError("Invalid syntax: " + e)
 
 	if not permissive:
-		if (pathstack != list(set(pathstack))):
-			raise DuplicateWarning("Path List contains duplicates")
-		if (optarr1 != list(set(optarr1)) or optarr2 != list(set(optarr2))):
-			raise DuplicateWarning("Argument List contains duplicates")
+		if (sorted(pathstack) != sorted(list(set(pathstack)))):
+			dupflag += 1
+		if (sorted(optarr1) != sorted(list(set(optarr1))) or sorted(optarr2) != sorted(list(set(optarr2)))):
+			dupflag += 2
 
 	pathstack = list(set(pathstack))
 	optarr1   = list(set(optarr1))
@@ -101,6 +101,12 @@ def parseArgv(specArgs=[], valid1chars=[], validoptions=[], permissive=True):
 		for e in optarr2:
 			if (e not in validoptions):
 				raise InvalidParameter(str(e))
+
+	if (dupflag > 1):
+		raise DuplicateWarning("Argument List contains duplicates")
+	elif (dupflag == 1):
+		raise DuplicateWarning("Path List contains duplicates")
+	
 
 	return [pathstack, optarr1, optarr2, specParam]
 
