@@ -3,11 +3,13 @@
 import sys
 
 from python_modules.parseArgv import parseArgv, InvalidParameter, DuplicateWarning
-from python_modules.matiPatch import patch
 from python_modules.createPage import createPage
+from python_modules.matiPatch import patch
+
+developer = True
 
 def dev(msg):
-    if True: # or False
+    if developer:
         print('\x1b[1;36;44mDev:\x1b[0m ', end="")
         print('\x1b[1;36;1m' + str(msg) + '\x1b[0m ')
 
@@ -18,16 +20,6 @@ def gethelpin(arr, val):
     if val in arr:
         return arr.index(val)
     return 0
-
-main_commands = {
-    "patch"     : [["n", "name"], ["f"], ["full"], 0, False, False],
-    "page"      : [[], [], [], 1, False, False],
-}
-
-help_particular = {
-    "patch": "Usage: mcn patch [-n (name)] [-f]\n  -n, --name\t\t   new project's name\n  -f, --full\t\t   force reinstallation of dependencies",
-    "page": "Usage: mcn page [-f][-D] (name)\n  -D, --delete\t\t   delete named page(WIP)\n  -f, --fix-routes\t   attempts to adapt the routes file to the standard(WIP)"
-}
 
 def printHelp(particular=""):
     if len(particular) == 0 or particular == sys.argv[0]:
@@ -42,21 +34,36 @@ MCN NativeScript toolkit command list
         if particular in help_particular:
             print(help_particular[particular])
         else:
-            error('Unknown command: "' + particular + '"')
+            error('Unknown Command: "' + particular + '"')
             print("Type mcn --help to list all available commands")
     exit(0)
+
+# DATA --------------------------------------------------------------------------
+
+version = "1.0.0"
+
+main_commands = {
+    "patch"     : [["n", "name"], ["f"], ["full"], 0, False, False],
+    "page"      : [[""], ["Df"], ["delete", "fix-routes"], 1, False, False],
+}
+
+help_particular = {
+    "patch": "Usage: mcn patch [-n (name)] [-f]\n  -n, --name\t\t   new project's name\n  -f, --full\t\t   force reinstallation of dependencies",
+    "page": "Usage: mcn page [-f][-D] (name)\n  -D, --delete\t\t   delete named page(WIP)\n  -f, --fix-routes\t   attempts to adapt the routes file to the standard(WIP)"
+}
 
 # Program starts here -----------------------------------------------------------
 
 try:
     if "--help" in sys.argv or len(sys.argv) == 1:
         printHelp(sys.argv[gethelpin(sys.argv,"--help")-1])
+    if sys.argv[1] == "--version":
+        print(version)
 
     mainCMD = sys.argv[1]
     if mainCMD not in main_commands:
         printHelp(mainCMD)
            
-
     res = parseArgv(sys.argv[2:], *main_commands[mainCMD])
 except DuplicateWarning as e:
     error(e)
@@ -66,7 +73,7 @@ except SyntaxError as e:
     printHelp(mainCMD)
     exit(1)
 except InvalidParameter as e:
-    error("Invalid parameter: \"" + ("-"*(1+(len(str(e))>1))) + str(e) + "\"")
+    error("Invalid Parameter: \"" + ("-"*(1+(len(str(e))>1))) + str(e) + "\"")
     printHelp(mainCMD)
     exit(1)
 except BaseException as e:
@@ -75,5 +82,34 @@ except BaseException as e:
         exit(2)
     else:
         exit(1)
+
+if mainCMD == "page":
+    try:
+        if (len(res[1]) + len(res[2]) + len(res[4]) == 0):
+            printHelp(mainCMD)
+        elif (len(res[1]) + len(res[2]) > 1 or (("f" in res[1] or "fix-routes" in res[2]) and len(res[4]) > 0)):
+            error("Invalid combination of arguments")
+            printHelp(mainCMD)
+        elif (len(res[4]) > 0):
+            createPage([sys.argv[0]] + res[4], "D" in res[1] or "delete" in res[2], developer)
+        else: #fix
+            print("OPTION NOT YET IMPLEMENTED")
+    except:
+        pass
+
+if mainCMD == "patch":
+    try:
+        if (("-n" in res[3] and "--name" in res[3]) or ("f" in res[1] and "full" in res[2])):
+            error("Invalid combination of arguments")
+            printHelp(mainCMD)
+        else:
+            args = [sys.argv[0]]
+            if (len(res[3]) > 0):
+                if ("-n" not in res[3]):
+                    res[3]["-n"] == res[3]["--name"]
+                args.append(res[3]["-n"])
+            patch(args, ("f" in res[1] or "full" in res[2]), developer)
+    except BaseException as e:
+        dev("Exception -> " + str(e))
 
 dev(res)

@@ -59,13 +59,19 @@ def parseArgv(param, specArgs=[], valid1chars=[], validoptions=[], unhiffened_ar
 				aux.append(e)
 			i += 1
 		param = aux
-		
+	
+	unhiffened_arr = []
 	for e in param:
 		if (e[0] != '-'):
-			if ((os.path.isdir(e) and getpath) or (len(pathstack) < unhiffened_args)):
-				pathstack.append(os.path.abspath(e))
+			if (getpath):
+				if (os.path.isdir(e)):
+					pathstack.append(os.path.abspath(e))
+				else:
+					raise SyntaxError("Invalid " + ("Path/"*getpath) + "Argument: \"" + e + "\"")
+			if (len(unhiffened_arr) < unhiffened_args):
+				unhiffened_arr.append(e)
 			else:
-				raise SyntaxError("Invalid " + ("Path/"*getpath) + "Argument: \"" + e + "\"")
+				raise SyntaxError("Unexpected Extra Argument: \"" + e + "\"");
 		elif (len(e) > 1 and e[1] != '-'):
 			optarr1 += e[1:]
 		elif (len(e) > 2 and e[2] != '-'):
@@ -108,7 +114,7 @@ def parseArgv(param, specArgs=[], valid1chars=[], validoptions=[], unhiffened_ar
 		raise DuplicateWarning("Path List contains duplicates")
 	
 
-	return [pathstack, optarr1, optarr2, specParam]
+	return [pathstack, optarr1, optarr2, specParam, unhiffened_arr]
 
 # For debugging
 if (__name__ == "__main__"):
