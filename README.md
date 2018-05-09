@@ -1,2 +1,0 @@
-# Agora
-Politica no politizada
