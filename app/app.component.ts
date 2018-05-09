@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-//import { Router } from "@angular/router";
+import { Router } from "@angular/router";
 import { Page } from "tns-core-modules/ui/page";
 
 @Component({
@@ -11,6 +11,6 @@ export class AppComponent {
 	constructor(private page: Page) { }
 
 	ngOnInit() {
-		//this.router.navigate(["login"]);
+		this.router.navigate(["login"]);
 	}
 }
