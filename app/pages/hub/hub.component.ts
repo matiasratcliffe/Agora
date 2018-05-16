@@ -1,4 +1,4 @@
-import { Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { BaseService } from "~/services/base.service";
 import { Page } from "tns-core-modules/ui/page";
 

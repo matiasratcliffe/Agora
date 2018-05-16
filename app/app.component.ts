@@ -8,7 +8,7 @@ import { Page } from "tns-core-modules/ui/page";
 })
 export class AppComponent {
 
-	constructor(private page: Page) { }
+	constructor(private page: Page, private router: Router) { }
 
 	ngOnInit() {
 		this.router.navigate(["login"]);
