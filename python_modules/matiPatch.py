@@ -130,12 +130,40 @@ def patch(argv, full=False, dev=False):
 		with open("platforms/android/settings.gradle", 'r') as f:
 			data = f.readlines()
 			for i in range(0, len(data)):
-				result = re.match("(.*rootProject\.name ?= ?\").*(\".*)", data[i])
+				result = re.match("(.*rootProject\.name[ \t]*=[ \t]*\").*(\".*)", data[i])
 				if (result):
 					data[i] = result.group(1) + name + result.group(2) + "\n" #re.match trims the line break
 					break
 		if not dev:
 			with open("platforms/android/settings.gradle", 'w') as f:
+				for ln in data:
+					f.write(ln)
+		print("Done!")
+
+		print("\nModyfing platforms/android/app/src/main/AndroidManifest.xml...", end="")
+		with open("platforms/android/app/src/main/AndroidManifest.xml", 'r') as f:
+			data = f.readlines()
+			for i in range(0, len(data)):
+				result = re.match("([ \t]*package[ \t]=[ \t]*\"org\.nativescript\.).*(\"[ \t]*)", data[i])
+				if (result):
+					data[i] = result.group(1) + name + result.group(2) + "\n" #re.match trims the line break
+					break
+		if not dev:
+			with open("platforms/android/app/src/main/AndroidManifest.xml", 'w') as f:
+				for ln in data:
+					f.write(ln)
+		print("Done!")
+
+		print("\nModyfing platforms/android/app/src/main/res/values/strings.xml...", end="")
+		with open("platforms/android/app/src/main/res/values/strings.xml", 'r') as f:
+			data = f.readlines()
+			for i in range(0, len(data)):
+				result = re.match("([ \t]*<string name=\".*\">).*(</string>[ \t]*)", data[i])
+				if (result):
+					data[i] = result.group(1) + name + result.group(2) + "\n" #re.match trims the line break
+					break
+		if not dev:
+			with open("platforms/android/app/src/main/res/values/strings.xml", 'w') as f:
 				for ln in data:
 					f.write(ln)
 		print("Done!")

@@ -6,8 +6,8 @@ import { User } from "~/model/user.model";
 
 @Component({
 	selector: "app-hub",
-	templateUrl: "pages/hub/hub.component.html",
-	styleUrls: ["pages/hub/hub.component.css"],
+	templateUrl: "hub.component.html",
+	styleUrls: ["hub.component.css"],
 	providers: [BaseService]
 })
 export class HubComponent implements OnInit {

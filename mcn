@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 
+import os
 import sys
 
 from python_modules.parseArgv import parseArgv, InvalidParameter, DuplicateWarning
 from python_modules.createPage import createPage
 from python_modules.matiPatch import patch
 
-developer = True
+developer = False # True or False
 
 def dev(msg):
     if developer:
@@ -29,7 +30,9 @@ def printHelp(particular=""):
   mcn <command> --help\t   prints particular help about <command>
 MCN NativeScript toolkit command list
   patch\t\t\t   tries to ammend project naming issues
-  page\t\t\t   creates a new page and adds it to routes""")
+  page\t\t\t   creates a new page and adds it to routes
+  build\t\t\t   builds the project with lightstart parameters
+  run\t\t\t   runs the project with lightstart parameters""")
     else:
         if particular in help_particular:
             print(help_particular[particular])
@@ -40,11 +43,13 @@ MCN NativeScript toolkit command list
 
 # DATA --------------------------------------------------------------------------
 
-version = "1.0.0"
+version = "1.1.0"
 
 main_commands = {
     "patch"     : [["n", "name"], ["f"], ["full"], 0, False, False],
     "page"      : [[""], ["Df"], ["delete", "fix-routes"], 1, False, False],
+    "build"     : [[""], [""], [""], 0, False, False],
+    "run"       : [[""], [""], [""], 0, False, False]
 }
 
 help_particular = {
@@ -111,5 +116,11 @@ if mainCMD == "patch":
             patch(args, ("f" in res[1] or "full" in res[2]), developer)
     except BaseException as e:
         dev("Exception -> " + str(e))
+
+if mainCMD == "build":
+    os.system("tns build android --bundle --env.uglify --env.aot --env.snapshot")
+
+if mainCMD == "run":
+    os.system("tns run android --bundle --env.uglify --env.aot --env.snapshot")
 
 dev(res)

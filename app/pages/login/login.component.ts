@@ -9,8 +9,8 @@ import { User } from "~/model/user.model";
 
 @Component({
 	selector: "app-login",
-	templateUrl: "pages/login/login.component.html",
-	styleUrls: ["pages/login/login.component.css"],
+	templateUrl: "login.component.html",
+	styleUrls: ["login.component.css"],
 	providers: [BaseService, HttpService]
 })
 export class LoginComponent implements OnInit {
