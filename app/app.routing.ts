@@ -3,10 +3,10 @@ import { HubComponent } from "./pages/hub/hub.component";
 
 export const routes = [
 	{ path: "login", component: LoginComponent },
-	{ path: "hub", component: HubComponent },
+	{ path: "hub", component: HubComponent }
 ];
 
 export const navigatableComponents = [
 	LoginComponent,
-	HubComponent,
+	HubComponent
 ];
