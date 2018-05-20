@@ -43,12 +43,16 @@ export class LoginComponent implements OnInit {
 		}).subscribe(
 			(response) => { 
 				//alert(response.content); 
-				this.app.log("biennnnn");
-				this.app.setData("user", this.user);
-				this.app.goto("hub");
+				//this.app.log("biennnnn");
+				//this.app.setData("user", this.user);
+				//this.app.goto("hub");
+				console.log(response);
+				alert("bien");
 			},
 			(error) => {
-				alert(error.error.text);	
+				console.log(error);
+				//alert(error.error.text);	
+				alert("mal");
 			}
 		);
 	}
