@@ -80,7 +80,7 @@ def createPage(argv, delete=False, dev=False):
         #la primera seccion
         imports = []
         for line in buffer[0].split("\n"):
-            #el r"" para ke no me eskape el \2 y me lo tome como group backreference
+            #el r"" para ke no me escape el \2 y me lo tome como group backreference
             result = re.match(r"import[ \t]*{[ \t]*(.*)Component[ \t]*}[ \t]*from[ \t]*\"\./pages/(.*/)?([a-z]+[0-9]*)/\3\.component\";", line.strip())
             if not (result):
                 raise BaseException("First section general pattern did not match")

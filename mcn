@@ -6,8 +6,9 @@ import sys
 from python_modules.parseArgv import parseArgv, InvalidParameter, DuplicateWarning
 from python_modules.createPage import createPage
 from python_modules.matiPatch import patch
+from python_modules.install import install
 
-developer = False # True or False
+developer = True # True or False
 
 def dev(msg):
     if developer:
@@ -58,6 +59,8 @@ help_particular = {
 }
 
 # Program starts here -----------------------------------------------------------
+
+install(False)
 
 try:
     if "--help" in sys.argv or len(sys.argv) == 1:
