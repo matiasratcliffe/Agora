@@ -6,9 +6,14 @@ import sys
 from python_modules.parseArgv import parseArgv, InvalidParameter, DuplicateWarning
 from python_modules.createPage import createPage
 from python_modules.matiPatch import patch
+<<<<<<< HEAD
 from python_modules.install import install
 
 developer = True # True or False
+=======
+
+developer = False # True or False
+>>>>>>> 21c19486c4cd9ea76e1a475610bc9b52c268b362
 
 def dev(msg):
     if developer:
@@ -60,8 +65,11 @@ help_particular = {
 
 # Program starts here -----------------------------------------------------------
 
+<<<<<<< HEAD
 install(False)
 
+=======
+>>>>>>> 21c19486c4cd9ea76e1a475610bc9b52c268b362
 try:
     if "--help" in sys.argv or len(sys.argv) == 1:
         printHelp(sys.argv[gethelpin(sys.argv,"--help")-1])
