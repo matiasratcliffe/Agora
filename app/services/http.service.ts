@@ -1,8 +1,6 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-
+import { HttpClient, HttpResponse } from "@angular/common/http";
+import { Observable } from 'rxjs/Observable';
 
 import { BaseService } from "./base.service";
 
@@ -13,19 +11,13 @@ export class HttpService {
 
 	constructor(private app: BaseService, private http: HttpClient) { }
 
-	httpOptions = {
-		headers: new HttpHeaders({
-			'Content-Type':  'application/json',
-			'Authorization': 'my-auth-token'
-		})
-	};
-
 	setDefaultUrl(url: string) {
 		this.defaultUrl = url;
 	}
 
-	post(dic, url=this.defaultUrl) {
-		return this.http.post(url, dic, this.httpOptions);
+	post(dic, url: string=this.defaultUrl):Observable<HttpResponse<Object>> {
+		this.app.log("HTTP Post: " + url);
+		return this.http.post(url, dic, {observe: 'response'});
 	}
-	
+
 }

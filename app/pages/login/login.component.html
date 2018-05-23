@@ -1,7 +1,9 @@
 <FlexboxLayout>
-	<StackLayout class="form login" [class.dark]="!isLoggingIn">
+	<StackLayout class="form login">
 		<TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" [(ngModel)]="user.email" class="input input-border"></TextField>
+		<TextField hint="Repeat Email" class="input input-border" [visibility]="isLoggingIn ? 'collapsed' : 'visible'"></TextField>
 		<TextField hint="Password" secure="true" [(ngModel)]="user.password" class="input input-border"></TextField>
+		<TextField hint="Repeat password" secure="true" class="input input-border" [visibility]="isLoggingIn ? 'collapsed' : 'visible'"></TextField>
 
 		<Button [text]="isLoggingIn ? 'Ingresar' : 'Registrarse'" class="btn btn-primary" (tap)="submit()"></Button>
 		<Button [text]="isLoggingIn ? 'Registrate' : 'Iniciar sesion'" (tap)="toggleDisplay()"></Button>

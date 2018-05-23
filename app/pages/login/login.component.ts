@@ -37,31 +37,27 @@ export class LoginComponent implements OnInit {
 
 	login() {
 		this.http.post({
-			"action": "login",
-			"user": this.user.email,
-			"pass": this.user.password
-		}).subscribe(
+			"email": this.user.email,
+			"password": this.user.password
+		}, AppConfig.server + "users/login").subscribe(
 			(response) => { 
-				//alert(response.content); 
-				//this.app.log("biennnnn");
-				//this.app.setData("user", this.user);
-				//this.app.goto("hub");
-				console.log(response);
-				alert("bien");
+				alert('bien');
+				this.app.setData("user", this.user);
+				console.log(response.headers.get("X-Auth"))
+				this.app.goto("hub");
 			},
 			(error) => {
 				console.log(error);
-				//alert(error.error.text);	
 				alert("mal");
+				//this.app.goto("hub");
 			}
 		);
 	}
 
 	signUp() {
 		this.http.post({
-			"action": "register",
-			"user": this.user.email,
-			"pass": this.user.password
+			"email": this.user.email,
+			"password": this.user.password
 		}).subscribe(
 			(response) => { 
 				//alert(response.content); 

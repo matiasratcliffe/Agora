@@ -10,13 +10,15 @@ export class BaseService {
 
 	constructor(private router: Router) { }
 
-	goto(location: string) {
-		this.router.navigate([location]);
+	goto(location: string, params: Array<any> = []) {
+		this.log("going to " + location);
+		this.log(String([location, ...params]));
+		this.router.navigate([location, ...params]);
 	}
 
 	log(message: string) {
 		if (this.dev) {
-			console.log(message);
+			console.log('[DEV] ' + message);
 		}
 	}
 
