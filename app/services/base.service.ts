@@ -1,14 +1,23 @@
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { Injectable } from "@angular/core";
 
 @Injectable()
 export class BaseService {
 
-	dev: boolean = true;
-	private static pageStack: Array<Object> = [];
+	private static dev: boolean = true;
 	private static data: Object = {};
+	public static navbar: boolean = false;
+	
+	public params;
 
-	constructor(private router: Router) { }
+
+	constructor(private router: Router, private activatedRoute: ActivatedRoute) { 
+		this.activatedRoute.params.subscribe(
+			(params) => {
+				this.params = params;
+			}
+		);
+	}
 
 	goto(location: string, params: Array<any> = []) {
 		this.log("going to " + location);
@@ -17,14 +26,14 @@ export class BaseService {
 	}
 
 	log(message: string) {
-		if (this.dev) {
+		if (BaseService.dev) {
 			console.log('[DEV] ' + message);
 		}
 	}
 
 	error(message: string) {
-		if (this.dev) {
-			console.error(message);
+		if (BaseService.dev) {
+			console.error('[DEV] ' + message);
 		}
 	}
 
@@ -35,7 +44,9 @@ export class BaseService {
 	}
 
 	getData(key: string | number) {
-		return BaseService.data[key];
+		if (this.isset(key)) {
+			return BaseService.data[key];
+		}
 	}
 
 	setData(key: string | number, value: any) {
@@ -43,6 +54,8 @@ export class BaseService {
 	}
 
 	delData(key: string | number) {
-		delete BaseService.data[key];
+		if (this.isset(key)) {
+			delete BaseService.data[key];
+		}
 	}
 }

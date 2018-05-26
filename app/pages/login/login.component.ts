@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 			(response) => { 
 				alert('bien');
 				this.app.setData("user", this.user);
-				console.log(response.headers.get("X-Auth"))
+				console.log(response.headers.get("X-Auth"));
 				this.app.goto("hub");
 			},
 			(error) => {

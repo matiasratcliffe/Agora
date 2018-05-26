@@ -28,9 +28,3 @@ TextField {
 .login {
   border-radius: 5;
 }
-.dark {
-  background-color: #301217;
-}
-.dark TextField {
-  color:  #C4AFB4;
-}

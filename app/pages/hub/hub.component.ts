@@ -3,7 +3,6 @@ import { BaseService } from "~/services/base.service";
 import { Page } from "tns-core-modules/ui/page";
 
 import { User } from "~/model/user.model";
-import { ActivatedRoute } from "@angular/router";
 
 @Component({
 	selector: "app-hub",
@@ -15,18 +14,12 @@ export class HubComponent implements OnInit {
 
 	user: User;
 
-	constructor(private app: BaseService, private page: Page, private activatedRoute: ActivatedRoute) {
-		this.activatedRoute.params.subscribe(
-			(params) => {
-				//console.log(params);
-			}
-		);
-		/*
+	constructor(private app: BaseService, private page: Page) {
+		this.app.log(this.app.params);
 		if (app.isset("user"))
 			this.user = app.getData("user");
 		else
-			this.app.goto(""); //go to start, and do some checking there
-		*/
+			alert("no u5er found");
 	}
 
 	ngOnInit() {
